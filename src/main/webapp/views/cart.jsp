@@ -12,6 +12,17 @@
     <title>Title</title>
 </head>
 <body>
+<form method="POST" action="/addform">
+    Nazwa Produktu    : <input type="text" name="name"> </br>
+    Cena    : <input type="number" name="price" step="0.01"> </br>
+    Ilość     : <input type="number" name="quantity"> </br>
+
+
+    <input type="submit" value="Wyślij">
+</form>
+
+
+
 <h1>Koszyk</h1>
 <c:forEach var="item" items="${cartItems}">
     <h1>${item.quantity} | ${item.product.name} w cenie ${item.product.price}</h1>

@@ -12,7 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<form method="POST" action="/addform">
+<form method="POST" action="/cart/addform">
     Nazwa Produktu    : <input type="text" name="name"> </br>
     Cena    : <input type="number" name="price" step="0.01"> </br>
     Ilość     : <input type="number" name="quantity"> </br>
@@ -25,7 +25,10 @@
 
 <h1>Koszyk</h1>
 <c:forEach var="item" items="${cartItems}">
-    <h1>${item.quantity} | ${item.product.name} w cenie ${item.product.price}</h1>
+    <h1>Ilość: ${item.quantity} | ${item.product.name} w cenie ${item.product.price}
+        <input type="button" onclick="location.href='/cart/clearProduct?name=${item.product.name}';" value="Usuń wszystko" />
+        <input type="button" onclick="location.href='/cart/addProduct?name=${item.product.name}';" value="zwiększ ilość" />
+        <input type="button" onclick="location.href='/cart/deleteProduct?name=${item.product.name}';" value="zmniejsz ilość" /></h1>
 </c:forEach>
 </body>
 </html>

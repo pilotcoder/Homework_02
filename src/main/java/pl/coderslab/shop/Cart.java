@@ -17,14 +17,17 @@ public class Cart {
     }
 
     public List<CartItem> getCartItems() {
+
         return cartItems;
     }
 
     public void setCartItems(List<CartItem> cartItems) {
+
         this.cartItems = cartItems;
     }
 
     public void addToCart(CartItem cartItem){
+
         this.cartItems.add(cartItem);
     }
 }
